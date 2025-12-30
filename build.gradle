@@ -7,7 +7,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath ('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
+        classpath('com.anatawa12.forge:ForgeGradle:1.2-1.1.+') {
             changing = true
         }
     }
@@ -32,15 +32,27 @@ minecraft {
     runDir = "run"
 }
 
+repositories {
+    maven {
+        name 'CurseMaven'
+        url 'https://cursemaven.com'
+        content {
+            includeGroup 'curse.maven'
+        }
+    }
+    maven {
+        name 'jitpack'
+        url 'https://jitpack.io'
+    }
+}
+
 dependencies {
-    // you may put jars on which you depend on in ./libs
-    // or you may define them like so..
-    //compile "some.group:artifact:version:classifier"
-    //compile "some.group:artifact:version"
-      
-    // real examples
-    //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
-    //compile 'com.googlecode.efficient-java-matrix-library:ejml:0.24' // adds ejml to the dev env
+    // Thaumcraft
+    implementation files("lib/Thaumcraft-1.7.10-4.2.3.5.jar")
+    compileOnly files("lib/Baubles-1.7.10-1.0.1.10-deobf.jar")
+    // NEI
+    //runtimeOnly "curse.maven:nei-222211:${project.nei_version}"
+    //runtimeOnly "curse.maven:codechickencore-222213:${project.ccc_version}"
 
     // for more info...
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
@@ -51,12 +63,12 @@ dependencies {
 processResources {
     // This will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
-    inputs.property "mcversion", project.minecraft.version
+    inputs.property "mcversion", project.mc_version
 
     // Replace values in only mcmod.info.
     filesMatching('mcmod.info') {
         // Replace version and mcversion.
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand 'version': project.version, 'mcversion': project.mc_version
     }
 }
 

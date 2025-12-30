@@ -2,17 +2,19 @@
   {
     "modid": "morenodestuff",
     "name": "More Node Stuff",
-    "description": "Example placeholder mod.",
+    "description": "An addon for Thaumcraft 4 primarily providing node related things",
     "version": "${version}",
     "mcversion": "${mcversion}",
     "url": "",
     "updateUrl": "",
     "authorList": [
-      "ExampleDude"
+      "Sarinsa"
     ],
-    "credits": "The Forge and FML guys, for making this example",
+    "credits": "Unknown025, for providing a tutorial on how to set up a 1.7.10 project in friggin 2025",
     "logoFile": "",
     "screenshots": [],
-    "dependencies": []
+    "dependencies": [
+      "Thaumcraft"
+    ]
   }
 ]
