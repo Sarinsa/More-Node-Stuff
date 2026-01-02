@@ -1,7 +1,7 @@
 package com.sarinsa.morenodestuff.common.block;
 
-import com.sarinsa.morenodestuff.common.Util;
 import com.sarinsa.morenodestuff.common.tileentity.NodeAgitatorTileEntity;
+import com.sarinsa.morenodestuff.common.util.MNSRenderTypes;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.BlockContainer;
@@ -34,7 +34,7 @@ public class NodeAgitatorBlock extends BlockContainer {
     
     @Override
     public int getRenderType() {
-        return Util.BlockRenderID.NODE_AGITATOR;
+        return MNSRenderTypes.NODE_AGITATOR;
     }
     
     @SideOnly( Side.CLIENT )

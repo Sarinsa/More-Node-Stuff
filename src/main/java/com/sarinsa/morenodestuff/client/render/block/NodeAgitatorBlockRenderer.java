@@ -1,7 +1,7 @@
 package com.sarinsa.morenodestuff.client.render.block;
 
-import com.sarinsa.morenodestuff.common.Util;
 import com.sarinsa.morenodestuff.common.tileentity.NodeAgitatorTileEntity;
+import com.sarinsa.morenodestuff.common.util.MNSRenderTypes;
 import cpw.mods.fml.client.registry.ISimpleBlockRenderingHandler;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
@@ -35,6 +35,6 @@ public class NodeAgitatorBlockRenderer implements ISimpleBlockRenderingHandler {
     
     @Override
     public int getRenderId() {
-        return Util.BlockRenderID.NODE_AGITATOR;
+        return MNSRenderTypes.NODE_AGITATOR;
     }
 }
